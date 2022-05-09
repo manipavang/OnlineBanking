@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>AccountDetail Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>AccountDetail List</h1>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Account Number</th>
+                <th>Account Type In</th>
+                <th>Ifsc Code</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="accountdetail : ${listAccountDetails}">
+            	<td th:text="${accountdetail.id}">Customer ID</td>
+                <td th:text="${accountdetail.cname}">Customer Name</td>
+                <td th:text="${accountdetail.accountno}">Account Number</td>
+                <td th:text="${accountdetail.accounttype}">Account Type</td>
+                <td th:text="${accountdetail.ifsccode}">Ifsc Code</td>
+               
+            </tr>
+        </tbody>
+    </table>
+</div>    
+</body>
+</html>

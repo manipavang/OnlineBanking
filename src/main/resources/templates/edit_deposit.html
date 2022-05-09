@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Edit Bank</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Create New Deposit</h1>
+		<br />
+		<form action="#" th:action="@{/saved}" th:object="${deposit}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>ACC NO:</td>
+					<td><input type="text" th:field="*{daccno}" /></td>
+				</tr>
+				<tr>
+					<td>Acc Holder Name:</td>
+					<td><input type="text" th:field="*{daccholdername}" /></td>
+				</tr>
+				<tr>
+					<td>Ifsc Code</td>
+					<td><input type="text" th:field="*{difsccode}" /></td>
+				</tr>
+				<tr>
+					<td>Amount DEPOSITED</td>
+					<td><input type="text" th:field="*{damount}" /></td>
+				</tr>								
+				<tr>
+					<td colspan="2"><button type="submit">Update</button> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	</body>
+</html>

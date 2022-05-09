@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Deposit</title>
+</head>
+<body>
+<div align="center">
+    <h1>Deposit List</h1>
+    <a href="newdepositcus">Create New Deposit</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Acc No</th>
+                <th>Ifsc Code</th>
+                <th>Acc Holder Name</th>
+                <th>Amount DEPOSITED</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="deposit : ${listDeposit}">
+            	<td th:text="${deposit.daccno}">Acc No</td>
+                <td th:text="${deposit.difsccode}">Ifsc Code</td>
+                <td th:text="${deposit.daccholdername}">Acc Holder Name</td>
+                <td th:text="${deposit.damount}">Amount DEPOSITED</td>
+               
+                <td>
+                	<a th:href="@{'/editd/' + ${deposit.did}}">Edit</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/deleted/' + ${deposit.did}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
+</body>
+</html>

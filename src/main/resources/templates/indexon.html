@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Bank Details</title>
+</head>
+<body>
+<div align="center">
+    <h1>Bank List</h1>
+    <a href="newbank">Create New Bank</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Bank ID</th>
+                <th>Bank Name</th>
+                <th>Bank City</th>
+                <th>Bankph</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="bank : ${listBanks}">
+            	<td th:text="${bank.bid}">Bank ID</td>
+                <td th:text="${bank.bname}">Bank Name</td>
+                <td th:text="${bank.bcity}">Bank City</td>
+                <td th:text="${bank.bphone}">Bankph</td>
+                <td>
+                	<a th:href="@{'/editon/' + ${bank.bid}}">Edit</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/deleteon/' + ${bank.bid}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
+</body>
+</html>

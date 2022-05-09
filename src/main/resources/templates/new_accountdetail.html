@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New AccountDetail</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Create New AccountDetail</h1>
+		<br />
+		<form action="#" th:action="@{/saveacc}" th:object="${accountdetail}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>AccountDetail Customer Name:</td>
+					<td><input type="text" th:field="*{cname}" /></td>
+				</tr>
+				<tr>
+					<td>AccountDetail Customer ID:</td>
+					<td><input type="text" th:field="*{id}" /></td>
+				</tr>
+				<tr>
+					<td>AccountDetail Account Number:</td>
+					<td><input type="text" th:field="*{accountno}" /></td>
+				</tr>
+				<tr>
+					<td>AccountDetail Account Type:</td>
+					<td><input type="text" th:field="*{accounttype}" /></td>
+				</tr>
+				<tr>
+					<td>AccountDetail IFSC Code:</td>
+					<td><input type="text" th:field="*{ifsccode}" /></td>
+				</tr>
+												
+				<tr>
+					<td colspan="2"><button type="submit">Save</button> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
